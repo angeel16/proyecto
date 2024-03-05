@@ -1,5 +1,9 @@
 'use client'
 import Button from '@/components/button-form';
+import Google from "@auth/core/providers/google"
+import GitHub from '@auth/core/providers/github'
+import Gitlab from '@auth/core/providers/gitlab'
+import Spotify from '@auth/core/providers/spotify'
 import { useState } from 'react';
 import { register } from '@/lib/actions'
 import { signIn } from 'next-auth/react'; // signIn desde lado CLIENTE
@@ -19,7 +23,7 @@ function RegisterForm() {
                     email: data.get('email'),
                     password: data.get('password'),
                     callbackUrl: '/dashboard'
-                })         
+                })
         } else {
             setTipo('error')
             setResultado(message.error);

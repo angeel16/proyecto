@@ -121,20 +121,18 @@ async function getProveedoresIds() {
 
 
 
-// ARTÍCULOS
 
 export async function getProductos() {
     try {
         const productos = await prisma.producto.findMany()
         return productos;
     } catch (error) {
-        // console.log(error);  
         return null;
     }
 }
 
 
-export async function getProducto(id) {  // obtener artículo con proveedores
+export async function getProducto(id) {
     try {
         const producto = await prisma.producto.findUnique({
             where: { id },
@@ -146,7 +144,6 @@ export async function getProducto(id) {  // obtener artículo con proveedores
         console.log(producto);
         return producto;
     } catch (error) {
-        // console.log(error);  
         return null;
     }
 }
@@ -193,26 +190,6 @@ export async function newProducto(formData) {
     redirect('/productos');
 }
 
-
-/* 
-// EJEMPLO ACTUALIZACIÓN
-const result = await prisma.articulo.update({
-  where: {
-    id: 16,
-  },
-  include: {
-    proveedores: true,
-  },
-  data: {
-    proveedores: {
-      connect: [{id: 4}, {id: 5}],
-      disconnect: [{ id: 12 }, { id: 19 }],
-    },
-  },
- 
-})
- 
-*/
 
 export async function editProducto(formData) {
     const id = Number(formData.get('id'))
@@ -297,7 +274,7 @@ export async function getProveedores() {
 
 
 
-export async function getProveedor(id) {  // obtener proveedores con artículos
+export async function getProveedor(id) {
     try {
         const proveedor = await prisma.proveedor.findUnique({
             where: { id },
@@ -309,7 +286,6 @@ export async function getProveedor(id) {  // obtener proveedores con artículos
         console.log(proveedor);
         return proveedor;
     } catch (error) {
-        // console.log(error);  
         return null;
     }
 }
