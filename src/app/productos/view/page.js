@@ -1,5 +1,5 @@
 import Form from "@/components/FormProducto"
-import prisma from '@/lib/prisma'
+import { prisma } from '@/lib/prisma'
 import { getProducto } from "@/lib/actions"
 
 export const dynamic = 'force-dynamic'

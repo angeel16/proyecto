@@ -1,5 +1,5 @@
 import Form from "@/components/FormProveedor"
-import prisma from '@/lib/prisma'
+import { prisma } from '@/lib/prisma'
 import { getProveedor } from "@/lib/actions"
 
 export const dynamic = 'force-dynamic'
