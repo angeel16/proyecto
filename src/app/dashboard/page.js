@@ -4,7 +4,7 @@ async function page() {
     const sesion = await auth();
 
     return (
-        <div className="flex justify-center items-start h-screen">
+        <div className="flex justify-center items-start min-h-screen bg-gray-100">
             <div className="container mx-auto p-4 text-center mt-12">
                 <h1 className="text-3xl font-bold mb-4">🔑 Dashboard</h1>
                 <p className="text-lg">Name: {sesion?.user.name}</p>

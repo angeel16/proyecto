@@ -13,7 +13,7 @@ async function page({ searchParams }) {
 
     return (
         <div>
-            <h3>Eliminar proveedor {searchParams.id}</h3>
+            <h3 className="text-3xl font-bold text-center">Eliminar proveedor {searchParams.id}</h3>
             <Form action={deleteProveedor} title='Eliminar proveedor' proveedor={proveedor} />
         </div>
     )

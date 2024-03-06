@@ -11,26 +11,22 @@ async function Header() {
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="relative flex items-center justify-between h-16">
                     <div className="flex items-center flex-shrink-0">
-                        {/* Enlace al inicio */}
                         <Link href="/" className="ml-12 text-white hover:text-gray-300">
                             Inicio
                         </Link>
 
-                        {/* Enlace al panel de administración (solo visible para usuarios ADMIN) */}
                         {session?.user?.role === 'ADMIN' && (
                             <Link legacyBehavior href="/admin">
                                 <a className="ml-4 text-white hover:text-gray-300">Admin Panel</a>
                             </Link>
                         )}
 
-                        {/* Enlace al dashboard */}
-                        <Link href="/dashboard" className="ml-4 text-white hover:text-gray-300">
+                        <Link href="/dashboard" className="ml-10 text-white hover:text-gray-300">
                             Dashboard
                         </Link>
                     </div>
 
                     <div className="flex items-center space-x-4">
-                        {/* Botón de cierre de sesión o enlaces de registro e inicio de sesión */}
                         {session ? (
                             <form>
                                 <button type="submit" className="inline-flex items-center px-3 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gray-700 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white" formAction={logout}>

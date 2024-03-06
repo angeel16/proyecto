@@ -7,7 +7,6 @@ export const dynamic = 'force-dynamic'
 
 export default async function Home() {
     const proveedores = await getProveedores()
-    // console.log(proveedores);
 
     return (
         <div className="flex flex-col items-center justify-center py-2">
@@ -16,8 +15,10 @@ export default async function Home() {
                 <Link href="/proveedores/new" className="enlace block text-center mb-2">Nuevo proveedor</Link>
                 {proveedores.map((proveedor) => (
                     <Proveedor key={proveedor.id} proveedor={proveedor}>
-                        <Link href={{ pathname: '/proveedores/edit', query: { id: proveedor.id } }} className="enlace">Editar proveedor</Link>
-                        <Link href={{ pathname: '/proveedores/delete', query: { id: proveedor.id } }} className="enlace">Eliminar proveedor</Link>
+                        <div className="flex flex-col sm:flex-row justify-between">
+                            <Link href={{ pathname: '/proveedores/edit', query: { id: proveedor.id } }} className="enlace mb-2 sm:mb-0">Editar proveedor</Link>
+                            <Link href={{ pathname: '/proveedores/delete', query: { id: proveedor.id } }} className="enlace">Eliminar proveedor</Link>
+                        </div>
                     </Proveedor>
                 ))}
             </div>

@@ -30,7 +30,7 @@ function Form({ children, action, title, producto, disabled = false }) {
             </fieldset>
             <ListaProveedores productoId={producto?.id} disabled={disabled} />
             <div className="text-center mt-4">
-                {children}
+                {children && <div className="mb-4">{children}</div>}
                 <Button title={title} />
             </div>
         </form>
