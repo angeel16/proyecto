@@ -24,8 +24,8 @@ function page({ searchParams }) {
   return (
     <>
       {error && <h3>{errors.get(error)}</h3>}
-      <div className="form">
-        <h1>Iniciar sesión</h1>
+      <div className="form mt-14">
+        <h1 className="mt-14">Iniciar sesión</h1>
         <LoginForm error={error} />
         <OAuthForm error={error} />
       </div>

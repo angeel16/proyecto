@@ -30,10 +30,11 @@ function RegisterForm() {
         <form action={wrapper} className='credentials'>
             <div>
                 <label>Nombre
-                    <input type='text' name='name' placeholder="José García" />
+
+                    <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type='text' name='name' placeholder="angel" />
                 </label>
                 <label>Email
-                    <input type='email' name='email' placeholder="jose@mail.com" />
+                    <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type='email' name='email' placeholder="angel@mail.com" />
                 </label>
                 <label>Contraseña
                     <input type="password" name='password' placeholder="******" />
