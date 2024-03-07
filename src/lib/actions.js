@@ -156,17 +156,14 @@ export async function newProducto(formData) {
         const descripcion = formData.get('descripcion')
         const precio = Number(formData.get('precio'))
 
-        // Array con IDs de todos los proveedores
         const ids = await getProveedoresIds()
         console.log('IDs ', ids);
 
-        // Array con IDs de proveedores marcados por el usuario
         const checks = ids.map(id => formData.get(id.toString()))
             .filter(id => id !== null)
             .map(id => Number(id))
         console.log('CHECKS ', checks);
 
-        // Array de objetos con IDs de proveedores a conectar al artículo
         const connect = checks.map(id => { return { id: Number(id) } })
         console.log('CONNECT ', connect);
 
@@ -197,22 +194,17 @@ export async function editProducto(formData) {
     const descripcion = formData.get('descripcion')
     const precio = Number(formData.get('precio'))
 
-    // Array con IDs de todos los proveedores
     const ids = await getProveedoresIds()
     console.log('IDs ', ids);
 
-    // Array con IDs de proveedores marcados por el usuario
     const checks = ids.map(id => formData.get(id.toString()))
         .filter(id => id !== null)
         .map(id => Number(id))
     console.log('CHECKS ', checks);
 
-    // Array de objetos con IDs de proveedores a conectar al artículo
     const connect = checks.map(id => { return { id: Number(id) } })
     console.log('CONNECT ', connect);
 
-    // Array de objetos con IDs de proveedores a desconectar del artículo
-    // https://stackoverflow.com/questions/1187518/how-to-get-the-difference-between-two-arrays-in-javascript
     const difference = ids.filter(id => !checks.includes(id));
     const disconnect = difference.map(id => { return { id: Number(id) } })
     console.log('DISCONNECT ', disconnect);
