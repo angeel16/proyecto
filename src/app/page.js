@@ -2,9 +2,8 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="flex justify-center items-center min-h-screen mt-8 mb-8">
+    <main className="flex justify-center items-center min-h-screen" style={{ backgroundImage: "url('/frutas-y-frutos-secos.jpg')", backgroundSize: "cover" }}>
       <div className="w-full max-w-md p-8 bg-gray-100 rounded-lg flex flex-col items-center">
-        <img src="frutas-y-frutos-secos.jpg" alt="Imagen" className="w-full max-w-md mb-8 rounded-lg" />
         <h1 className="text-3xl font-bold mb-4 text-center">La Huerta de las Delicias</h1>
         <p className="text-lg text-gray-800 mb-6 text-center">
           Bienvenido a La Huerta de las Delicias, tu destino para frutas frescas y productos de calidad. Explora nuestro
@@ -31,7 +30,7 @@ function NavItem({ href, children }) {
   return (
     <li className="text-green-600 cursor-pointer transition duration-300">
       <Link legacyBehavior href={href}>
-        <a className="hover:text-green-800">{children}</a>
+        <a className="text-gray-700 hover:text-blue-600 px-2 py-1 rounded-md hover:bg-blue-100">{children}</a>
       </Link>
     </li>
   );

@@ -13,7 +13,7 @@ async function page({ searchParams }) {
     });
 
     return (
-        <div>
+        <div style={{ minHeight: "93vh", backgroundImage: "url('/frutas-y-frutos-secos.jpg')", backgroundSize: "cover", backgroundPosition: "center" }}>
             <h3 className="text-3xl font-bold text-center">Editar proveedor {searchParams.id}</h3>
             <Form action={editProveedor} title='Editar proveedor' proveedor={proveedor} />
         </div>

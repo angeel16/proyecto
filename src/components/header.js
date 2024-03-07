@@ -3,11 +3,10 @@ import { auth } from "@/auth";
 import { logout } from '@/lib/actions';
 
 async function Header() {
-    // Obtenemos la información de sesión del usuario
     const session = await auth();
 
     return (
-        <nav className="bg-gray-800">
+        <nav className="bg-gradient-to-r from-blue-200 to-blue-500">
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="relative flex items-center justify-between h-16">
                     <div className="flex items-center flex-shrink-0">

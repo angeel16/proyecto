@@ -12,14 +12,14 @@ export default auth((req) => {
 
         let callbackUrl = req.nextUrl.pathname;
         if (req.nextUrl.search) {
-          callbackUrl += req.nextUrl.search;
+            callbackUrl += req.nextUrl.search;
         }
-    
+
         const encodedCallbackUrl = encodeURIComponent(callbackUrl);
         return Response.redirect(req.nextUrl.origin
             + `/auth/login?callbackUrl=${encodedCallbackUrl}`)
     }
-    
+
 })
 
 
@@ -28,9 +28,9 @@ export const config = {
         "/dashboard(.*)",
         "/admin(.*)",
         "/proveedores(.*)",
-        "/articulos",
-        "/articulos/new",
-        "/articulos/edit",
-        "/articulos/delete",
+        "/productos",
+        "/productos/new",
+        "/productos/edit",
+        "/productos/delete",
     ],
 };

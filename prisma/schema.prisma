@@ -61,7 +61,7 @@ model Producto {
 model Proveedor {
   id        Int        @id @default(autoincrement())
   nombre    String
-  nacional  Boolean?
+  // nacional  Boolean?
   createdAt DateTime   @default(now())
   updatedAt DateTime   @updatedAt
   productos Producto[]

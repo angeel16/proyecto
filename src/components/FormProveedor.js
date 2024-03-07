@@ -15,10 +15,10 @@ function Form({ children, action, title, proveedor, disabled = false }) {
                         placeholder='Nombre'
                         defaultValue={proveedor?.nombre} autoFocus required />
                 </div>
-                <div className="flex items-center justify-between">
+                {/* <div className="flex items-center justify-between">
                     <label htmlFor='nacional' className="mr-2">Nacional</label>
                     <input type='checkbox' id='nacional' name='nacional' defaultChecked={proveedor?.nacional} />
-                </div>
+                </div> */}
             </fieldset>
             <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                 <div className="mb-4 md:mb-0">
