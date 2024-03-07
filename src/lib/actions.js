@@ -287,12 +287,10 @@ export async function getProveedor(id) {
 export async function newProveedor(formData) {
     try {
         const nombre = formData.get('nombre')
-        let nacional = formData.get('nacional')
 
-        nacional = Boolean(nacional)
 
         const proveedor = await prisma.proveedor.create({
-            data: { nombre, nacional },
+            data: { nombre },
         })
 
         console.log(proveedor);
