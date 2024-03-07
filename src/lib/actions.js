@@ -306,14 +306,12 @@ export async function newProveedor(formData) {
 export async function editProveedor(formData) {
     const id = Number(formData.get('id'))
     const nombre = formData.get('nombre')
-    let nacional = formData.get('nacional')
 
-    nacional = Boolean(nacional)
 
     try {
         const proveedor = await prisma.proveedor.update({
             where: { id },
-            data: { nombre, nacional },
+            data: { nombre },
         })
         console.log(proveedor);
         revalidatePath('/proveedores')
